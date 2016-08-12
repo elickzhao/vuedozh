@@ -33,7 +33,7 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            'throttle:60,1',
+            'throttle:60,1',    //60是尝试次数,1是时间一分钟 不过这是默认的,不知道非写上有啥用
         ],
     ];
 

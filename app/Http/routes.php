@@ -57,7 +57,7 @@ Route::group(['prefix' => 'api', 'middleware' => 'api', 'namespace' => 'Api'], f
 | Dashboard Routes
 |--------------------------------------------------------------------------
 */
-Route::group(['prefix' => 'dashboard', 'middleware' => 'authorized:view-dashboard'], function () {
+Route::group(['prefix' => 'dashboard', 'middleware' => 'authorized:view-dashboard'], function () {  //这个中间件还是不太懂
     Route::get('/{vue_capture?}', function () {
         return view('admin.index');
     })->where('vue_capture', '[\/\w\.-]*');
