@@ -19,8 +19,10 @@ class MeController extends ApiController
      */
     public function __construct(Request $request)
     {
-//        $this->middleware('authorized:manage-category,categories', ['except' => ['index', 'show']]);
-        $this->user = $request->user();
+//        $this->middleware('authorized:manage-category,categories', ['except' => ['index', 'show']]);;
+
+        //dump($request->user());
+        $this->user = $request->user(); //应该是5.2新增的获取当前用户
     }
 
     /**
