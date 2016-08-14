@@ -7,6 +7,7 @@ use Hash;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\User;
 
 class MeController extends ApiController
 {
@@ -20,7 +21,6 @@ class MeController extends ApiController
     public function __construct(Request $request)
     {
 //        $this->middleware('authorized:manage-category,categories', ['except' => ['index', 'show']]);;
-
         //dump($request->user());
         $this->user = $request->user(); //应该是5.2新增的获取当前用户
     }
@@ -31,7 +31,12 @@ class MeController extends ApiController
      */
     public function show()
     {
-        return $this->respondWith($this->user, new UserTransformer);
+        $user = User::get();
+        //dump($user);
+        //其实直接用laravel返回json也可以,不过有些多余字段去除和增加数据库没有的字段比较麻烦 比如这里的头像 数据库是没有的
+        //所以用fractal比较简单 只要自定义模板 UserTransformer 就可以了.格式化输出json.但是结果都放在data下
+        //return response()->json($user);  
+        return $this->respondWith($user, new UserTransformer);
     }
 
     /**

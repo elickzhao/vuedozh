@@ -106,9 +106,8 @@ class ApiController extends Controller
         // dump($callback);
         // dump($includes);
         // 按道理说$itme是数据,$callback是模板 但是这个Fractal还没搞懂 再说laravel不是自己有json么为什么还用这个
-        // 明天先看眼这个Fractal吧
-        // 不行手坏了看来的放两天了
         // cyvelnet/laravel5-fractal 用的是这个插件
+        // $includes 应该是 UserTransformer 里的includePosts()之类的方法
         return Fractal::includes($includes)->item($item, $callback)->responseJson();
     }
 
