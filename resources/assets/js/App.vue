@@ -6,6 +6,7 @@
   <div id="app">
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
+      <!-- 这里应该是面包屑的地方 看看如何每个页面都换 -->
       <section class="content-header">
         <h1>
           Admin Panel
