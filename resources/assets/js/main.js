@@ -18,7 +18,9 @@ var router = new VueRouter({
 
 router.map({
     '/': {
-        component: require('./components/Home.vue')
+        component: require('./components/Home.vue'),
+        name: home,
+        description: "这里是主页" 
     },
     '/posts/': {
         name: 'posts',

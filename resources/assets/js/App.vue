@@ -9,8 +9,8 @@
       <!-- 这里应该是面包屑的地方 看看如何每个页面都换 -->
       <section class="content-header">
         <h1>
-          Admin Panel
-          <small>Everything is here.</small>
+          {{$route.name | uppercase }}
+          <small>{{ $route.description }}</small>
         </h1>
       </section>
 
