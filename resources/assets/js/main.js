@@ -19,33 +19,43 @@ var router = new VueRouter({
 router.map({
     '/': {
         component: require('./components/Home.vue'),
-        name: home,
+        name: 'home',
         description: "这里是主页" 
     },
     '/posts/': {
+        component: require('./components/Posts.vue'),
         name: 'posts',
-        component: require('./components/Posts.vue')
+        description: "文章" 
     },
     '/posts/categories/:hashid': {
         name: 'postincats',
-        component: require('./components/Posts.vue')
+        component: require('./components/Posts.vue'),
+        description: "文章分类" 
     },
     '/posts/:hashid/edit': {
         name: 'editpost',
-        component: require('./components/Editpost.vue')
+        component: require('./components/Editpost.vue'),
+        description: "编辑文章" 
     },
     '/users': {
-        component: require('./components/Users.vue')
+        component: require('./components/Users.vue'),
+        name: 'users',
+        description: "用户列表" 
     },
     '/categories': {
-        component: require('./components/Categories.vue')
+        component: require('./components/Categories.vue'),
+        name: 'categories',
+        description: "分类列表" 
     },
     '/categories/:hashid/edit': {
         name: 'categories',
-        component: require('./components/Editcategory.vue')
+        component: require('./components/Editcategory.vue'),
+        description: "编辑分类列表" 
     },
     '/profile': {
-        component: require('./components/Profile.vue')
+        component: require('./components/Profile.vue'),
+        name: 'profile',
+        description: "用户信息" 
     },
 })
 
