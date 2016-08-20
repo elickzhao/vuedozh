@@ -16,6 +16,10 @@
           {{$route.name ? $route.name : 'Adminpanel' | uppercase }}
           <small>{{ $route.description ? $route.description : '所有工具都在这里' }}</small>
         </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+          <li class="active">{{$route.name | uppercase }}</li>
+        </ol>
       </section>
 
       <!-- Main content -->
