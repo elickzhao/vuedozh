@@ -6,11 +6,8 @@
   <div id="app">
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
-      <!-- 这里应该是面包屑的地方 看看如何每个页面都换 -->
-      <!-- 缺少图标面包屑 可以参考下 -->
       <!-- 还有就是进入的时候 是空白页 不是跳到home页有展示内容这个也需要改 -->
       <!-- 还有个问题是ｇｕｌｐ如何直接观察变化的问题　要不每次都得生成文件才能看到结果 -->
-      <!-- 今天没什么时间了 明天再来吧 -->
       <section class="content-header">
         <h1>
           {{$route.name ? $route.name : 'Adminpanel' | uppercase }}
