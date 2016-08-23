@@ -8,7 +8,7 @@
       <!-- Content Header (Page header) -->
       <!-- 还有就是进入的时候 是空白页 不是跳到home页有展示内容这个也需要改 -->
       <!-- 还有个问题是ｇｕｌｐ如何直接观察变化的问题　要不每次都得生成文件才能看到结果 -->
-      <!-- 今天又没法弄了 -->
+      <!-- 今天又没法弄了 再歇一天 -->
       <section class="content-header">
         <h1>
           {{$route.name ? $route.name : 'Adminpanel' | uppercase }}
