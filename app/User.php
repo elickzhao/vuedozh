@@ -80,6 +80,6 @@ class User extends Authenticatable
 
     //Mutators  //修改器 laravel中方法
     public function getAvatarAttribute(){
-        return 'http://cn.gravatar.com/avatar/'. md5($this->email);
+        return 'http://cn.gravatar.com/avatar/'.md5($this->email);
     }
 }
