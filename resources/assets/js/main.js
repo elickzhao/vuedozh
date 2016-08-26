@@ -17,7 +17,7 @@ var router = new VueRouter({
 
 
 router.map({
-    '/': {  //改成空格也不对 //明天把这里改下测试一下
+    '/': {  //改成空格也不对 //明天把这里改下测试一下 //结果今天又没搞懂
         component: require('./components/Home.vue'),
         name: 'home',
         description: "这里是主页" 
