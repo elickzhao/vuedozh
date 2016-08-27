@@ -23,7 +23,7 @@
       <!-- Main content -->
       <section class="content">
         <!-- Your Page Content Here -->
-        <!-- route outlet --> <!-- 这里就是问题因为main.js里没有定义subRoutes 所以这个router-view其实不好使的. 每次点击其实跳入的其他页面  这个说法好像不严谨还得再考虑 -->
+        <!-- route outlet -->
         <router-view></router-view>
       </section>
       <!-- /.content -->
@@ -34,7 +34,7 @@
 
 <script>
 import Navbar from './components/layouts/Navbar.vue'
-import Sidebar from './components/layouts/Sidebar.vue'
+import Sidebar from './components/layouts/Sidebar.vue'  //这里有问题 当前选定的菜单不是激活状态 只是下拉菜单是有激活状态
 
 
 

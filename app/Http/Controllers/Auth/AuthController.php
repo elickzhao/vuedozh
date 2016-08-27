@@ -44,6 +44,7 @@ class AuthController extends Controller
     }
 
     protected function authenticated($request, $user){
+        //跳转到登陆之前的页面
         if ($request->has('redirectTo')){
             $this->redirectTo = $request->get('redirectTo');
         }
