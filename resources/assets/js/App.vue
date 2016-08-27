@@ -23,7 +23,7 @@
       <!-- Main content -->
       <section class="content">
         <!-- Your Page Content Here -->
-        <!-- route outlet -->
+        <!-- route outlet --> <!-- 这里就是问题因为main.js里没有定义subRoutes 所以这个router-view其实不好使的. 每次点击其实跳入的其他页面  这个说法好像不严谨还得再考虑 -->
         <router-view></router-view>
       </section>
       <!-- /.content -->
