@@ -19,9 +19,9 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li><a v-link="{ path: '/' }"><i class="fa fa-home"></i> <span>Home</span></a></li>
+        <li class="pageLink active" @click="toggleMenu"><a v-link="{ path: '/' }"><i class="fa fa-home"></i> <span>Home</span></a></li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="treeview">
+        <li class="treeview pageLink" @click="toggleMenu">
           <a href="#">
             <i class="fa fa-list"></i> <span>Posts</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
@@ -30,8 +30,8 @@
             <li><a @click="createPost" href="#"><i class="fa fa-keyboard-o"></i>Create post</a></li>
           </ul>
         </li>
-        <li><a v-link="{ path: '/categories' }"><i class="fa fa-th-large"></i> <span>Categories</span></a></li>
-        <li><a v-link="{ path: '/users' }"><i class="fa fa-users"></i> <span>Users</span></a></li>
+        <li class='pageLink' @click="toggleMenu"><a v-link="{ path: '/categories' }"><i class="fa fa-th-large"></i> <span>Categories</span></a></li>
+        <li class='pageLink' @click="toggleMenu"><a v-link="{ path: '/users' }"><i class="fa fa-users"></i> <span>Users</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -74,6 +74,12 @@ export default {
       } else {
         swal('Sorry', 'Please navigate elsewhere before creating new post.', 'info')
       }
+    },
+    toggleMenu: function (event) {
+      // remove active from li
+      window.$('li.pageLink').removeClass('active')
+      // Add it to the item that was clicked
+      event.toElement.parentElement.className = 'pageLink active'
     }
   }
 }

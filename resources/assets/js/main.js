@@ -16,7 +16,7 @@ var router = new VueRouter({
 })
 
 //这里有问题 当前选定的菜单不是激活状态 只是下拉菜单是有激活状态
-//困了今天暂时这样  //同上...一天天莫名就过去了
+//做了激活状态 不过跟下拉菜单冲突 这个还得再看看
 router.map({
     '': {  //首页即是home页怎么搞也没办法了 只能把home页内容放到app.vue的里 因为直接过来的是laravel路由指定的 默认去掉了后面的/
         component: require('./components/Home.vue'),
