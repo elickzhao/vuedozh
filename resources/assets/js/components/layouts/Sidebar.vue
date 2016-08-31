@@ -21,7 +21,7 @@
       <ul class="sidebar-menu">
         <li class="pageLink active" @click="toggleMenu"><a v-link="{ path: '/' }"><i class="fa fa-home"></i> <span>Home</span></a></li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="treeview pageLink" @click="toggleMenu">
+        <li class="treeview" @click="toggleMenu">
           <a href="#">
             <i class="fa fa-list"></i> <span>Posts</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
@@ -75,7 +75,7 @@ export default {
         swal('Sorry', 'Please navigate elsewhere before creating new post.', 'info')
       }
     },
-    toggleMenu: function (event) {
+    toggleMenu: function (event) {  //这个激活状态还是有问题,有时显示有时不显示,暂时先这样吧
       // remove active from li
       window.$('li.pageLink').removeClass('active')
       // Add it to the item that was clicked
