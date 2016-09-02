@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.2.37 on 2016-07-22.
+ * Generated for Laravel 5.2.45 on 2016-09-02.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -3700,17 +3700,6 @@ namespace {
         }
         
         /**
-         * Get the deeply nested relations for a given top-level relation.
-         *
-         * @param string $relation
-         * @return array 
-         * @static 
-         */
-        public static function nestedRelations($relation){
-            return \Illuminate\Database\Eloquent\Builder::nestedRelations($relation);
-        }
-        
-        /**
          * Apply the callback's query changes if the given "value" is true.
          *
          * @param bool $value
@@ -3842,6 +3831,17 @@ namespace {
         }
         
         /**
+         * Prevent the specified relations from being eager loaded.
+         *
+         * @param mixed $relations
+         * @return $this 
+         * @static 
+         */
+        public static function without($relations){
+            return \Illuminate\Database\Eloquent\Builder::without($relations);
+        }
+        
+        /**
          * Add subselect queries to count the relations.
          *
          * @param mixed $relations
@@ -3850,6 +3850,17 @@ namespace {
          */
         public static function withCount($relations){
             return \Illuminate\Database\Eloquent\Builder::withCount($relations);
+        }
+        
+        /**
+         * Add the given scopes to the current builder instance.
+         *
+         * @param array $scopes
+         * @return mixed 
+         * @static 
+         */
+        public static function scopes($scopes){
+            return \Illuminate\Database\Eloquent\Builder::scopes($scopes);
         }
         
         /**
@@ -3865,7 +3876,7 @@ namespace {
         /**
          * Get the underlying query builder instance.
          *
-         * @return \Illuminate\Database\Query\Builder|static 
+         * @return \Illuminate\Database\Query\Builder 
          * @static 
          */
         public static function getQuery(){
@@ -4451,6 +4462,33 @@ namespace {
         }
         
         /**
+         * Add a "where time" statement to the query.
+         *
+         * @param string $column
+         * @param string $operator
+         * @param int $value
+         * @param string $boolean
+         * @return \Illuminate\Database\Query\Builder|static 
+         * @static 
+         */
+        public static function whereTime($column, $operator, $value, $boolean = 'and'){
+            return \Illuminate\Database\Query\Builder::whereTime($column, $operator, $value, $boolean);
+        }
+        
+        /**
+         * Add an "or where time" statement to the query.
+         *
+         * @param string $column
+         * @param string $operator
+         * @param int $value
+         * @return \Illuminate\Database\Query\Builder|static 
+         * @static 
+         */
+        public static function orWhereTime($column, $operator, $value){
+            return \Illuminate\Database\Query\Builder::orWhereTime($column, $operator, $value);
+        }
+        
+        /**
          * Add a "where day" statement to the query.
          *
          * @param string $column
@@ -4805,7 +4843,7 @@ namespace {
          * Retrieve the minimum value of a given column.
          *
          * @param string $column
-         * @return float|int 
+         * @return mixed 
          * @static 
          */
         public static function min($column){
@@ -4816,7 +4854,7 @@ namespace {
          * Retrieve the maximum value of a given column.
          *
          * @param string $column
-         * @return float|int 
+         * @return mixed 
          * @static 
          */
         public static function max($column){
@@ -4827,7 +4865,7 @@ namespace {
          * Retrieve the sum of the values of a given column.
          *
          * @param string $column
-         * @return float|int 
+         * @return mixed 
          * @static 
          */
         public static function sum($column){
@@ -4838,7 +4876,7 @@ namespace {
          * Retrieve the average of the values of a given column.
          *
          * @param string $column
-         * @return float|int 
+         * @return mixed 
          * @static 
          */
         public static function avg($column){
@@ -4849,7 +4887,7 @@ namespace {
          * Alias for the "avg" method.
          *
          * @param string $column
-         * @return float|int 
+         * @return mixed 
          * @static 
          */
         public static function average($column){
@@ -4861,11 +4899,23 @@ namespace {
          *
          * @param string $function
          * @param array $columns
-         * @return float|int 
+         * @return mixed 
          * @static 
          */
         public static function aggregate($function, $columns = array()){
             return \Illuminate\Database\Query\Builder::aggregate($function, $columns);
+        }
+        
+        /**
+         * Execute a numeric aggregate function on the database.
+         *
+         * @param string $function
+         * @param array $columns
+         * @return float|int 
+         * @static 
+         */
+        public static function numericAggregate($function, $columns = array()){
+            return \Illuminate\Database\Query\Builder::numericAggregate($function, $columns);
         }
         
         /**
@@ -5527,6 +5577,19 @@ namespace {
         }
         
         /**
+         * Move a directory.
+         *
+         * @param string $from
+         * @param string $to
+         * @param bool $overwrite
+         * @return bool 
+         * @static 
+         */
+        public static function moveDirectory($from, $to, $overwrite = false){
+            return \Illuminate\Filesystem\Filesystem::moveDirectory($from, $to, $overwrite);
+        }
+        
+        /**
          * Copy a directory from one location to another.
          *
          * @param string $directory
@@ -5723,7 +5786,7 @@ namespace {
         }
         
         /**
-         * Get a guard instance for the given user.
+         * Get a gate instance for the given user.
          *
          * @param \Illuminate\Contracts\Auth\Authenticatable|mixed $user
          * @return static 
@@ -6745,15 +6808,15 @@ namespace {
         }
         
         /**
-         * Set the encrypter instance.
+         * Set the encrypter implementation.
          *
-         * @param \Illuminate\Contracts\Encryption\Encrypter $crypt
+         * @param \Illuminate\Contracts\Encryption\Encrypter $encrypter
          * @return void 
          * @static 
          */
-        public static function setEncrypter($crypt){
+        public static function setEncrypter($encrypter){
             //Method inherited from \Illuminate\Queue\Queue            
-            \Illuminate\Queue\SyncQueue::setEncrypter($crypt);
+            \Illuminate\Queue\SyncQueue::setEncrypter($encrypter);
         }
         
     }
@@ -7148,7 +7211,7 @@ namespace {
         }
         
         /**
-         * Get a subset of the items from the input data.
+         * Get a subset containing the provided keys with values from the input data.
          *
          * @param array|mixed $keys
          * @return array 
@@ -7230,7 +7293,7 @@ namespace {
          *
          * @param string $key
          * @param mixed $default
-         * @return \Symfony\Component\HttpFoundation\File\UploadedFile|array|null 
+         * @return \Illuminate\Http\UploadedFile|array|null 
          * @static 
          */
         public static function file($key = null, $default = null){
@@ -7731,7 +7794,7 @@ namespace {
         /**
          * Gets the list of trusted proxies.
          *
-         * @return array An array of trusted proxies.
+         * @return array An array of trusted proxies
          * @static 
          */
         public static function getTrustedProxies(){
@@ -7755,7 +7818,7 @@ namespace {
         /**
          * Gets the list of trusted host patterns.
          *
-         * @return array An array of trusted host patterns.
+         * @return array An array of trusted host patterns
          * @static 
          */
         public static function getTrustedHosts(){
@@ -8319,7 +8382,7 @@ namespace {
         /**
          * Sets the request format.
          *
-         * @param string $format The request format.
+         * @param string $format The request format
          * @static 
          */
         public static function setRequestFormat($format){
@@ -8385,7 +8448,7 @@ namespace {
         /**
          * Checks if the request method is of specified type.
          *
-         * @param string $method Uppercase request method (GET, POST etc).
+         * @param string $method Uppercase request method (GET, POST etc)
          * @return bool 
          * @static 
          */
@@ -8409,7 +8472,7 @@ namespace {
          * Returns the request body content.
          *
          * @param bool $asResource If true, a resource will be returned
-         * @return string|resource The request body content or a resource to read the body stream.
+         * @return string|resource The request body content or a resource to read the body stream
          * @throws \LogicException
          * @static 
          */
@@ -9596,7 +9659,7 @@ namespace {
         /**
          * Starts the session storage.
          *
-         * @return bool True if session started.
+         * @return bool True if session started
          * @throws \RuntimeException If session fails to start.
          * @static 
          */
@@ -9607,7 +9670,7 @@ namespace {
         /**
          * Returns the session ID.
          *
-         * @return string The session ID.
+         * @return string The session ID
          * @static 
          */
         public static function getId(){
@@ -9638,7 +9701,7 @@ namespace {
         /**
          * Returns the session name.
          *
-         * @return mixed The session name.
+         * @return mixed The session name
          * @static 
          */
         public static function getName(){
@@ -9665,7 +9728,7 @@ namespace {
          *                      will leave the system settings unchanged, 0 sets the cookie
          *                      to expire with browser session. Time is in seconds, and is
          *                      not a Unix timestamp.
-         * @return bool True if session invalidated, false if error.
+         * @return bool True if session invalidated, false if error
          * @static 
          */
         public static function invalidate($lifetime = null){
@@ -9676,12 +9739,12 @@ namespace {
          * Migrates the current session to a new session id while maintaining all
          * session attributes.
          *
-         * @param bool $destroy Whether to delete the old session or leave it to garbage collection.
+         * @param bool $destroy Whether to delete the old session or leave it to garbage collection
          * @param int $lifetime Sets the cookie lifetime for the session cookie. A null value
          *                       will leave the system settings unchanged, 0 sets the cookie
          *                       to expire with browser session. Time is in seconds, and is
          *                       not a Unix timestamp.
-         * @return bool True if session migrated, false if error.
+         * @return bool True if session migrated, false if error
          * @static 
          */
         public static function migrate($destroy = false, $lifetime = null){
@@ -9737,7 +9800,7 @@ namespace {
          * Returns an attribute.
          *
          * @param string $name The attribute name
-         * @param mixed $default The default value if not found.
+         * @param mixed $default The default value if not found
          * @return mixed 
          * @static 
          */
@@ -9813,6 +9876,30 @@ namespace {
          */
         public static function push($key, $value){
             \Illuminate\Session\Store::push($key, $value);
+        }
+        
+        /**
+         * Increment the value of an item in the session.
+         *
+         * @param string $key
+         * @param int $amount
+         * @return mixed 
+         * @static 
+         */
+        public static function increment($key, $amount = 1){
+            return \Illuminate\Session\Store::increment($key, $amount);
+        }
+        
+        /**
+         * Decrement the value of an item in the session.
+         *
+         * @param string $key
+         * @param int $amount
+         * @return int 
+         * @static 
+         */
+        public static function decrement($key, $amount = 1){
+            return \Illuminate\Session\Store::decrement($key, $amount);
         }
         
         /**
@@ -10459,11 +10546,12 @@ namespace {
         /**
          * Get the URL for the previous request.
          *
+         * @param mixed $fallback
          * @return string 
          * @static 
          */
-        public static function previous(){
-            return \Illuminate\Routing\UrlGenerator::previous();
+        public static function previous($fallback = false){
+            return \Illuminate\Routing\UrlGenerator::previous($fallback);
         }
         
         /**
@@ -11505,7 +11593,7 @@ namespace {
         /**
          * Check if the URI of the current request matches one of the specific URIs
          *
-         * @param array $uris
+         * @param array|string $uris
          * @return bool 
          * @static 
          */
@@ -11516,7 +11604,7 @@ namespace {
         /**
          * Check if the current URI matches one of specific patterns (using `str_is`)
          *
-         * @param array $patterns
+         * @param array|string $patterns
          * @return bool 
          * @static 
          */
@@ -11543,7 +11631,7 @@ namespace {
         /**
          * Check if the name of the current route matches one of specific values
          *
-         * @param array $routeNames
+         * @param array|string $routeNames
          * @return bool 
          * @static 
          */
@@ -11554,7 +11642,7 @@ namespace {
         /**
          * Check the current route name with one or some patterns
          *
-         * @param array $patterns
+         * @param array|string $patterns
          * @return bool 
          * @static 
          */
@@ -11577,7 +11665,7 @@ namespace {
         /**
          * Return 'active' class if current route action match one of provided action names
          *
-         * @param array $actions
+         * @param array|string $actions
          * @return bool 
          * @static 
          */
@@ -11588,7 +11676,7 @@ namespace {
         /**
          * Check if the current controller class matches one of specific values
          *
-         * @param array $controllers
+         * @param array|string $controllers
          * @return bool 
          * @static 
          */

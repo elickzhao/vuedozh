@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('/foo', function () {
+    $exitCode = Artisan::call('backup:mysql-dump');
+    dump($exitCode);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

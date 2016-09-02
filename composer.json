@@ -20,7 +20,8 @@
         "erusev/parsedown-extra": "^0.7.1",
         "larapack/config-writer": "1.*",
         "eusonlito/laravel-meta": "^3.0",
-        "ezyang/htmlpurifier": "^4.8"
+        "ezyang/htmlpurifier": "^4.8",
+        "paulvl/backup": "2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

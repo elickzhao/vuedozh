@@ -169,7 +169,9 @@ return [
         Hootlex\Moderation\ModerationServiceProvider::class,
         HieuLe\Active\ActiveServiceProvider::class,
         \App\Providers\ViewComposerProvider::class,
-        Eusonlito\LaravelMeta\MetaServiceProvider::class
+        Eusonlito\LaravelMeta\MetaServiceProvider::class,
+        //my
+        Backup\BackupServiceProvider::class,
 
 
     ],
