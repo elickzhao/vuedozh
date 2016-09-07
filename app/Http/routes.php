@@ -12,7 +12,9 @@
 */
 
 Route::get('/foo', function () {
+    //原始命令好像也不好使
     $exitCode = Artisan::call('backup:mysql-dump');
+    Artisan::call('route:list');
     dump($exitCode);
 });
 
