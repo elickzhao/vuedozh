@@ -8,7 +8,7 @@
       <!-- Content Header (Page header) -->
       <!-- 还有就是进入的时候 是空白页 不是跳到home页有展示内容这个也需要改 -->
       <!-- 还有个问题是ｇｕｌｐ如何直接观察变化的问题　要不每次都得生成文件才能看到结果 -->
-      <!-- 增加了 laravel备份插件 考试过了 这两个可以写了 不过今天得休息->
+      <!-- 增加了 laravel备份插件 考试过了 这两个可以写了 不过今天得休息 今天还得睡->
       <section class="content-header">
         <h1>
           {{$route.name ? $route.name : 'Adminpanel' | uppercase }}
