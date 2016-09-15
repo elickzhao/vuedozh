@@ -13,7 +13,7 @@
 
 Route::get('/foo', function () {
     //原始命令可以新加入命令不可以不知道是不是这个插件的问题 不行明天换一个插件看看
-    //起步 增减挡末尾 二档行驶三米后加油
+    //中秋快乐
     //$exitCode = Artisan::call('make:test',['name'=>'aa']);
     $aa = Artisan::call('backup:mysql-dump');
     //dump($exitCode);
