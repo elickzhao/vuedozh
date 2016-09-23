@@ -14,7 +14,7 @@
 Route::get('/foo', function () {
     //原始命令可以新加入命令不可以不知道是不是这个插件的问题 不行明天换一个插件看看
     //中秋快乐 最近够呛了 要考试了  明天上公路 再过两天考试 再有一天, 明天考试,加油 一次过. 考试过去了 噢耶
-    //今天关顾看科四了没看这个
+    //今天关顾看科四了没看这个 再过两天考科四
     //$exitCode = Artisan::call('make:test',['name'=>'aa']);
     $aa = Artisan::call('backup:mysql-dump');
     //dump($exitCode);
