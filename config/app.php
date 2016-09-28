@@ -171,7 +171,8 @@ return [
         \App\Providers\ViewComposerProvider::class,
         Eusonlito\LaravelMeta\MetaServiceProvider::class,
         //my
-        Backup\BackupServiceProvider::class,
+        //Backup\BackupServiceProvider::class,
+        Vinkla\Backup\BackupServiceProvider::class,
 
 
     ],

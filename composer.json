@@ -21,7 +21,7 @@
         "larapack/config-writer": "1.*",
         "eusonlito/laravel-meta": "^3.0",
         "ezyang/htmlpurifier": "^4.8",
-        "paulvl/backup": "2.*"
+        "vinkla/backup": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

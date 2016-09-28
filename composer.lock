@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0e1786f5af2ef44c2ad9ef5f294d611e",
-    "content-hash": "879011cf0016d23a1df0b7da2cfe57be",
+    "hash": "d2b6bef23fd6b0ae1d76b56f73898cba",
+    "content-hash": "85d3f356dd048385cc4d6352d9dc9da2",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -2538,44 +2538,6 @@
             "time": "2016-05-18 13:57:10"
         },
         {
-            "name": "paulvl/backup",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paulvl/backup.git",
-                "reference": "c1676f0a8a2358921ec0983d332fb06b861c38e2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paulvl/backup/zipball/c1676f0a8a2358921ec0983d332fb06b861c38e2",
-                "reference": "c1676f0a8a2358921ec0983d332fb06b861c38e2",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "5.2.*",
-                "league/flysystem-aws-s3-v3": "~1.0",
-                "php": ">=5.5.9"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Backup\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Paul Vidal",
-                    "email": "paul.vidal.lujan@gmail.com"
-                }
-            ],
-            "description": "Database backup package for laravel 5.2",
-            "time": "2016-01-09 16:54:52"
-        },
-        {
             "name": "psr/http-message",
             "version": "1.0.1",
             "source": {
@@ -3228,6 +3190,55 @@
             "time": "2016-07-19 10:45:57"
         },
         {
+            "name": "symfony/filesystem",
+            "version": "v3.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "bb29adceb552d202b6416ede373529338136e84f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/bb29adceb552d202b6416ede373529338136e84f",
+                "reference": "bb29adceb552d202b6416ede373529338136e84f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-07-20 05:44:26"
+        },
+        {
             "name": "symfony/finder",
             "version": "v3.0.9",
             "source": {
@@ -3830,6 +3841,62 @@
             "time": "2016-07-26 08:03:56"
         },
         {
+            "name": "vinkla/backup",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vinkla/laravel-backup.git",
+                "reference": "40a169a9935f85aaba8a8e6508ebcaa2b7dc99a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vinkla/laravel-backup/zipball/40a169a9935f85aaba8a8e6508ebcaa2b7dc99a8",
+                "reference": "40a169a9935f85aaba8a8e6508ebcaa2b7dc99a8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.1.* || 5.2.* || 5.3.*",
+                "illuminate/contracts": "5.1.* || 5.2.* || 5.3.*",
+                "illuminate/support": "5.1.* || 5.2.* || 5.3.*",
+                "php": "^5.5.9 || ^7.0",
+                "zenstruck/backup": "^1.2"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.1",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.8 || ^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Vinkla\\Backup\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vincent Klaiber",
+                    "email": "hello@vinkla.com"
+                }
+            ],
+            "description": "A backup manager for Laravel",
+            "keywords": [
+                "Flysystem",
+                "backup",
+                "database",
+                "laravel"
+            ],
+            "time": "2016-05-05 11:03:31"
+        },
+        {
             "name": "vinkla/hashids",
             "version": "2.3.0",
             "source": {
@@ -3940,6 +4007,63 @@
                 "environment"
             ],
             "time": "2016-09-01 10:05:43"
+        },
+        {
+            "name": "zenstruck/backup",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kbond/php-backup.git",
+                "reference": "e396e090e34276bdfbbb35b30d80cf94d938d3af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kbond/php-backup/zipball/e396e090e34276bdfbbb35b30d80cf94d938d3af",
+                "reference": "e396e090e34276bdfbbb35b30d80cf94d938d3af",
+                "shasum": ""
+            },
+            "require": {
+                "psr/log": "~1.0",
+                "symfony/filesystem": "~2.3|~3.0"
+            },
+            "require-dev": {
+                "gabrielelana/byte-units": "^0.3.0",
+                "league/flysystem": "~1.0",
+                "sllh/php-cs-fixer-styleci-bridge": "~1.4",
+                "symfony/console": "~2.5|~3.0",
+                "symfony/finder": "~2.5|~3.0",
+                "symfony/process": "~2.3|~3.0"
+            },
+            "suggest": {
+                "gabrielelana/byte-units": "For pretty filesize display"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zenstruck\\Backup\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Bond",
+                    "email": "kevinbond@gmail.com"
+                }
+            ],
+            "description": "Library to create and archive backups",
+            "homepage": "http://zenstruck.com/projects/php-backup",
+            "keywords": [
+                "backup"
+            ],
+            "time": "2015-11-20 14:48:14"
         }
     ],
     "packages-dev": [
