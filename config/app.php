@@ -171,8 +171,10 @@ return [
         \App\Providers\ViewComposerProvider::class,
         Eusonlito\LaravelMeta\MetaServiceProvider::class,
         //my
-        //Backup\BackupServiceProvider::class,
-        Vinkla\Backup\BackupServiceProvider::class,
+        //Backup\BackupServiceProvider::class,          //这个用url使用artisan不好使
+        //Vinkla\Backup\BackupServiceProvider::class,   //这个需要一个同步命令 win下面没有
+        //BackupManager\Laravel\Laravel5ServiceProvider::class, //需要zip命令用于压缩 而且配置里好像不能关闭这个
+        Spatie\Backup\BackupServiceProvider::class,
 
 
     ],
