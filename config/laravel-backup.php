@@ -8,20 +8,27 @@ return [
          * The name of this application. You can use this name to monitor
          * the backups.
          */
-        'name' => env('APP_URL'),
+        //'name' => env('APP_URL'),   //这个备份时的目录名,如果是服务器上域名是不错的不过本地的话改一下比较好
+        'name' => 'elick blog', 
 
         'source' => [
             //这个强大啊 还能备份文件
             'files' => [
+
 
                 /*
                  * The list of directories that should be part of the backup. You can
                  * specify individual files as well.
                  * 这个是目录迭代器 但是当迭代node_modules时会出错 所以注销了
                  * 这样也就无法备份文件系统了 明天可以试试把排除放在前面看看可不可以
+                 * 排除放在前面也不可以，但是可以挨个指定目录或文件
+                 * 没有这个迭代还不可以 只有排除是不行的
+                 * node_modules还是不行 里面全是链接目录一层套一层的 也不知道怎么搞的 不知道其他项目node目录是不是也这样
                  */
                 'include' => [
                     //base_path(),
+                     base_path('app'),
+                    // base_path('artisan'),   //目录和单个文件都是可以的
                 ],
 
                 
@@ -32,7 +39,10 @@ return [
                     base_path('vendor'),
                     base_path('node_modules'),
                     storage_path(),
+                    base_path('.git'),
+                    base_path('.idea'),
                 ],
+
 
                 /*
                  * Determines if symlinks should be followed.
@@ -57,8 +67,8 @@ return [
              * storage\app\http---localhost
              */
             'disks' => [
-                'local',        //这个位置在哪里设置明天看看
-                //storage_path('backups')
+                'local',        //这个配置位置在 config/filesystems.php
+                'backup',       //这个就是我自己加的
             ],
         ],
     ],

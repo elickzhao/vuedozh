@@ -51,6 +51,12 @@ return [
             'root' => storage_path('app'),
         ],
 
+        //我自己添加的
+        'backup' => [
+            'driver' => 'local',
+            'root' => storage_path('backups'),
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
