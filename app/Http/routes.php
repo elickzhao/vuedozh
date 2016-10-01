@@ -17,11 +17,10 @@ Route::get('/foo', function () {
     //中秋快乐 最近够呛了 要考试了  明天上公路 再过两天考试 再有一天, 明天考试,加油 一次过. 考试过去了 噢耶
     //今天关顾看科四了没看这个 再过两天考科四  再过一天考试, 明天科四 争取一把过 噢耶 嘿嘿 考完了 一百分一次过 耶耶
     //计划不如变化快啊 本来想今天看看这个的 结果下午出去就在没有时间了
-    //$exitCode = Artisan::call('make:test',['name'=>'aa']);
-    //$bb = Artisan::call('backup:mysql-dump');
+    //必须连接其他数据库 现在这个还不对 连接的还是自己的数据库
     $aa = Artisan::call('backup:run');
-    //dump($exitCode);
     dump($aa);
+    //echo env('DB_CONNECTION');
 });
 
 /*

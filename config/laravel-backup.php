@@ -14,8 +14,6 @@ return [
         'source' => [
             //这个强大啊 还能备份文件
             'files' => [
-
-
                 /*
                  * The list of directories that should be part of the backup. You can
                  * specify individual files as well.
@@ -55,7 +53,7 @@ return [
              * Currently only MySQL- and PostgreSQL-databases are supported.
              */
             'databases' => [
-                'mysql',
+                'test',     //这是在config/database.php里设置的 这样就可以保存系统之外的数据库了
             ],
         ],
 
