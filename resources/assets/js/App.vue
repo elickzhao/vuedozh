@@ -22,11 +22,10 @@
 
       <!-- Main content -->
       <section class="content">
-        {{$route.name}}
-        {{#if $route.name == 'categories'}}
-            dddddddddddddddddddd
-            <home></home>
-        {{/if}}
+      <!-- 终于ok了 这样跳转过来就能看到home页了 -->
+      <!-- 还有记住 变量未赋值是void 而不能用空 也就是这个'' 这样不成立 -->
+      <!-- 还有双括号那个if 不知道为啥怎么写都直接输出 好像不好用 不知道是不是版本问题 反正只能用v-if这么写了 -->
+      <home v-if="$route.name==viod"></home>
 
         <!-- Your Page Content Here -->
         <!-- route outlet -->

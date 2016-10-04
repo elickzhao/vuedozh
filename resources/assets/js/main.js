@@ -29,11 +29,11 @@ router.map({
     //             },
     //     }
     // },
-    // '': {  //首页即是home页怎么搞也没办法了 只能把home页内容放到app.vue的里 因为直接过来的是laravel路由指定的 默认去掉了后面的/
-    //     component: require('./components/Home.vue'),
-    //     name: 'home',
-    //     description: "这里是主页" 
-    // },
+    '': {  //首页即是home页怎么搞也没办法了 只能把home页内容放到app.vue的里 因为直接过来的是laravel路由指定的 默认去掉了后面的/
+        component: require('./components/Home.vue'),
+        name: 'home',
+        description: "这里是主页" 
+    },
     '/posts/': {
         component: require('./components/Posts.vue'),
         name: 'posts',
