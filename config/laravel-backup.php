@@ -118,6 +118,7 @@ return [
      *  In this array you can specify which backups should be monitored.
      *  If a backup does not meet the specified requirements the
      *  UnHealthyBackupWasFound-event will be fired.
+     *  这里是backup::list读取保存位置地方 即使上面改了默认地址
      */
     'monitorBackups' => [
         [
