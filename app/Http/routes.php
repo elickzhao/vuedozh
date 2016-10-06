@@ -24,6 +24,7 @@ Route::get('/foo', function (Filesystem $disk) {
     //数据库问题已经解决 不过今天没搞 明天开始搞前端 链接后端备份了
     // $aa = Artisan::call('backup:run');
     // dump($aa);
+    // 今天打球有点累先不弄了
     $lj =  Config::get('filesystems.disks.local.root')."\\elick-blog";
     $a =  File::Files($lj);
     $b = count($a);
