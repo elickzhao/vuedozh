@@ -12,7 +12,7 @@
 */
 use Spatie\Backup\Helpers\Format;
 use Spatie\Backup\BackupDestination\BackupDestination;
-use Spatie\Backup\BackupDestination\BackupCollection;
+//use Spatie\Backup\BackupDestination\BackupCollection;
 use Illuminate\Contracts\Filesystem\Filesystem;
 
 Route::get('/foo', function (Filesystem $disk) {
@@ -24,7 +24,6 @@ Route::get('/foo', function (Filesystem $disk) {
     //数据库问题已经解决 不过今天没搞 明天开始搞前端 链接后端备份了
     // $aa = Artisan::call('backup:run');
     // dump($aa);
-    // 今天打球有点累先不弄了
     $lj =  Config::get('filesystems.disks.local.root')."\\elick-blog";
     $a =  File::Files($lj);
     $b = count($a);
@@ -34,13 +33,24 @@ Route::get('/foo', function (Filesystem $disk) {
     
 
     //这个用插件的类来计算所占空间大小, 第二个参数可以改成elick-blog 不过这个实在app下那个目录, 不是backups那个
-    //回头再看看设置里怎么改掉这个 让计算这个也是自定义那个目录
-    $bd = new BackupDestination($disk,'http---localhost','local');
+    //回头再看看设置里怎么改掉这个 让计算这个也是自定义那个目录 (这个在配置项monitorBackups里)
+    //这个类很有趣默认disk路径可以用new这么写 如果自定义可以用静态方法create这么写  两方面都兼顾了 这个写法以前没见过 学习了
+    //$bd = new BackupDestination($disk,Config::get('laravel-backup.monitorBackups.0.name'),Config::get('laravel-backup.monitorBackups.0.disks'));
+    
+    //这个配置很麻烦的一点就是把参数写死了,要不然就是空的,而且这个配置的参数有点深
+    //可以做遍历循环显示 如同dackup::list 不过暂时用不到这个 还是简单点 只保存一个存储点好了
+    $bd = BackupDestination::create(Config::get('laravel-backup.monitorBackups.0.disks.0'),Config::get('laravel-backup.monitorBackups.0.name'));
+    //dump($bd);
     $t = $bd->getUsedStorage();
 
     $dd = Format::getHumanReadableSize($t);
     echo $dd;
 
+
+    // dump(Config::get('laravel-backup.backup'));
+    // dump(Config::get('laravel-backup.monitorBackups'));
+    // dump(Config::get('laravel-backup.monitorBackups.0.name'));
+    // dump(Config::get('laravel-backup.monitorBackups.0.disks'));
 
 
 

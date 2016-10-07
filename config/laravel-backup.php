@@ -123,9 +123,9 @@ return [
     'monitorBackups' => [
         [
             'name' => env('APP_URL'),
-            'disks' => ['local'],
-            'newestBackupsShouldNotBeOlderThanDays' => 1,
-            'storageUsedMayNotBeHigherThanMegabytes' => 5000,
+            'disks' => ['local','backup'],
+            'newestBackupsShouldNotBeOlderThanDays' => 1,   //貌似是新的备份不能比老的大的天数 也就是时间间隔为一天 不过具体效果看不出来
+            'storageUsedMayNotBeHigherThanMegabytes' => 5000,   //这是备份占的最大空间是
         ],
 
         /*
