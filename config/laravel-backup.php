@@ -75,6 +75,7 @@ return [
         /*
          * The strategy that will be used to cleanup old backups.
          * The youngest backup will never be deleted.
+         * 这个应该是删除老备份的设置  但怎么用不晓得 在command里也没效果
          */
         'strategy' => \Spatie\Backup\Tasks\Cleanup\Strategies\DefaultStrategy::class,
 

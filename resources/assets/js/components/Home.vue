@@ -5,7 +5,7 @@
         <span class="info-box-icon bg-aqua"><i class="fa fa-list"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Posts</span>
+          <span class="info-box-text">Posts -- 备份个数</span>
           <span class="info-box-number">{{posts.length}}</span>
         </div>
         <!-- /.info-box-content -->
@@ -17,7 +17,7 @@
         <span class="info-box-icon bg-orange"><i class="fa fa-th-large"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Categories</span>
+          <span class="info-box-text">Categories -- 所占内存大小 </span>
           <span class="info-box-number">{{categories.length}}</span>
         </div>
         <!-- /.info-box-content -->
@@ -29,7 +29,7 @@
         <span class="info-box-icon bg-purple"><i class="fa fa-users"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Users</span>
+          <span class="info-box-text">Users -- 最后备份日期</span>
           <span class="info-box-number">3</span>
         </div>
         <!-- /.info-box-content -->

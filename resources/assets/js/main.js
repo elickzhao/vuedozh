@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
-import VueResource from 'vue-resource'
+import VueResource from 'vue-resource'  //这是向后端请求数据的插件 类似jquery的ajax
 
 
 Vue.use(VueRouter)

@@ -97,7 +97,7 @@ export default {
         remote_next_page_url: 'meta.pagination.links.next',
         remote_prev_page_url: 'meta.pagination.links.previous'
       },
-      posts: [],
+      posts: [],    //看来各个组件间数据是通用的 不过我怎么记得需要个插件才能同步呢
       options2: [],
       categoryId: '',
     }

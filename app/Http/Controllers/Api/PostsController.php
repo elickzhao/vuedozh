@@ -27,7 +27,7 @@ class PostsController extends ApiController
     public function index(Request $request)
     {
         return $this->respondWith(
-            Post::withPostponed()->orderBy('created_at', 'DESC')->paginate(10)->appends([ 'include' => $request->input('include')]),
+            Post::withPostponed()->orderBy('created_at', 'DESC')->paginate(20)->appends([ 'include' => $request->input('include')]),
             new PostTransformer
         );
     }
