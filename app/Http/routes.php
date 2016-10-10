@@ -22,6 +22,7 @@ Route::get('/foo', function (Filesystem $disk) {
     //今天关顾看科四了没看这个 再过两天考科四  再过一天考试, 明天科四 争取一把过 噢耶 嘿嘿 考完了 一百分一次过 耶耶
     //计划不如变化快啊 本来想今天看看这个的 结果下午出去就在没有时间了
     //数据库问题已经解决 不过今天没搞 明天开始搞前端 链接后端备份了
+    //今天刚到北京 看来弄不了了 明天搞
     // $aa = Artisan::call('backup:run');
     // dump($aa);
     $lj =  Config::get('filesystems.disks.local.root')."\\elick-blog";
