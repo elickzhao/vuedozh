@@ -24,6 +24,7 @@ Route::get('/foo', function (Filesystem $disk) {
     //数据库问题已经解决 不过今天没搞 明天开始搞前端 链接后端备份了
     //今天刚到北京 看来弄不了了 明天搞
     //17年了 又回来了 额... 测试下ssh同步好使不
+    //完了 hexo还是不好使啊 真没法
     // $aa = Artisan::call('backup:run');
     // dump($aa);
     $lj =  Config::get('filesystems.disks.local.root')."\\elick-blog";
