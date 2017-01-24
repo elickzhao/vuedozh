@@ -25,7 +25,7 @@ Route::get('/foo', function (Filesystem $disk) {
     //今天刚到北京 看来弄不了了 明天搞
     //17年了 又回来了 额... 测试下ssh同步好使不
     //完了 hexo还是不好使啊 真没法
-    //还是没出来这个怎么这么麻烦啊
+    //还是没出来这个怎么这么麻烦啊  wtf  怎么没有提交成功啊
     // $aa = Artisan::call('backup:run');
     // dump($aa);
     $lj =  Config::get('filesystems.disks.local.root')."\\elick-blog";
