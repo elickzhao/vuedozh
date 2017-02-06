@@ -27,6 +27,7 @@ Route::get('/foo', function (Filesystem $disk) {
     //完了 hexo还是不好使啊 真没法
     //还是没出来这个怎么这么麻烦啊  wtf  怎么没有提交成功啊
     //hexo 已经修好了 不过今天一直忙没时间写东西了 那个这个补一下吧
+    //今天还得偷下懒 哎 这个新手机弄的
     // $aa = Artisan::call('backup:run');
     // dump($aa);  昨天没有推送 不对啊
     $lj =  Config::get('filesystems.disks.local.root')."\\elick-blog";
