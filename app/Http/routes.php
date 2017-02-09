@@ -29,6 +29,7 @@ Route::get('/foo', function (Filesystem $disk) {
     //hexo 已经修好了 不过今天一直忙没时间写东西了 那个这个补一下吧
     //哎 小米啊 真不省心 今天终于下定决心把它退了 虽然外观真的很讨喜 而且还有红外功能, 不过掉电太厉害了 用着总是心里发毛
     //今天还得偷下懒 哎 这个新手机弄的
+    //犹豫半天 最后还是360了 哎 钱少就是难以抉择啊  这年后工作和房子又是头疼的事 哎... 不知道17年会如何 还在贫困线有时想想挺悲哀的,虽然过的自由.
     // $aa = Artisan::call('backup:run');
     // dump($aa);  昨天没有推送 不对啊
     $lj =  Config::get('filesystems.disks.local.root')."\\elick-blog";
