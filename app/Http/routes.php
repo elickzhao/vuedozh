@@ -31,6 +31,7 @@ Route::get('/foo', function (Filesystem $disk) {
     //今天还得偷下懒 哎 这个新手机弄的
     //犹豫半天 最后还是360了 哎 钱少就是难以抉择啊  这年后工作和房子又是头疼的事 哎... 不知道17年会如何 还在贫困线有时想想挺悲哀的,虽然过的自由.
     //今天把票换了 妈蛋 改签居然只能改签当天的车  感觉好像被忽悠了 上次改签好像也不是当天的啊 以后得先问清楚了 或者用手机改
+    //又得偷懒了 真讨厌 明天不能这样了.
     // $aa = Artisan::call('backup:run');
     // dump($aa);  昨天没有推送 不对啊
     $lj =  Config::get('filesystems.disks.local.root')."\\elick-blog";
