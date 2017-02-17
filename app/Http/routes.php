@@ -35,7 +35,7 @@ Route::get('/foo', function (Filesystem $disk) {
     //今天本来想升级手机版本 不过逛一下论坛发现 都在骂新版本 看来论坛是个好东西啊 那就不要升级了, 360手机看来这个OS是不如华为那个了. 这手机可买性降低了.
     //嘿嘿 又是偷懒的一天 无话可说 .......
     //今天去魏博家了 所以又得偷懒一天了 哎
-    //
+    //接着偷懒 无可救药
     // $aa = Artisan::call('backup:run');
     // dump($aa);  昨天没有推送 不对啊
     $lj =  Config::get('filesystems.disks.local.root')."\\elick-blog";
